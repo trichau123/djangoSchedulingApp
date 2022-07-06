@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 #check user and pass
 from django.contrib.auth import authenticate,  login,logout
+#added jul6
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 #create user
 #from django.contrib.auth import User
@@ -35,3 +37,6 @@ def signin(request):
 
 	return render(request,"signin.html")
 
+@login_required
+def home(request):
+	return render(request, 'home.html')

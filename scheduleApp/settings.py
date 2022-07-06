@@ -122,6 +122,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+#jun 29
+LOGIN_REDIRECT_URL = 'home-page'
+
+
 #add code here jun 23
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
