@@ -33,7 +33,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     #just add jun 24 copy from apps
     'main.apps.MainConfig',
-    #
+    #jul6 add appointmentCalendar
+    'appointmentCalendar.apps.AppointmentcalendarConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

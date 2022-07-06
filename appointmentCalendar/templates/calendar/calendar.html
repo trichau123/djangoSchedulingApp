@@ -1,0 +1,72 @@
+<!--<link rel="stylesheet" type="text/css" href="calendar-styles.css">-->
+{<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calendar</title>
+        
+        {%  load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'calendar-styles.css' %}">
+        <!-- add css to html-->
+        
+        
+    </head>
+
+    <body>
+        <h1>Weekly Schedule</h1>
+
+        <div class="filter-container">
+            <label for="Campus">Choose Campus:</label>
+            <select>
+                <option value="Cranford">Cranford</option>
+                <option value="Elizabeth">Elizabeth</option>
+                <option value="Plainfield">Plainfield</option>
+                <option value="scotch-plains">Scotch Plains</option>
+            </select>
+            <input type="week" name="week" id="camp-week" min="2018-W18" max="2026-W26">
+            <input type="date" id="date">
+            <input type="time" id='starttime'/>
+            <input type="time" id='endtime'/>
+            <button>Add</button>
+        </div>
+
+        <div class="calendar-container">
+
+            <div class="header">
+                <ul class="weekdays">
+                    <li>Monday</li>
+                    <li>Tuesday</li>
+                    <li>Wednesday</li>
+                    <li>Thursday</li>
+                    <li>Friday</li>
+                </ul>
+            </div>
+
+            <div class="nameslots-container">
+                <ul class="nameslots">
+                    <li>Heather</li>
+                    <li>Lisa</li>
+                    <li>Robert</li>
+                    <li>Tinny</li>
+                </ul>
+            </div>
+
+
+            <div class="event-container">
+
+                
+                <div class="slot slot-1">
+                    <div class="event-status">
+                    </div>
+                    <span>Cr 8:00-6pm</span>
+                </div>
+
+            </div>
+        </div>
+
+    </body>
+</html>
+
+

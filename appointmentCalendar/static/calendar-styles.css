@@ -1,0 +1,90 @@
+li{
+    list-style: none;
+}
+
+ul{
+    margin: 0%;
+    padding: 0%;
+}
+
+.calendar-container{
+    display: grid;
+    grid-template-columns: 50px auto;
+    grid-template-rows: auto;
+    gap: 1px 1px;
+    grid-template-areas:
+        ". header"
+        "nameslots-container main";
+}
+
+.weekdays{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+
+.weekdays{
+    background: lightblue;
+}
+
+.header{
+    background: grey;
+    grid-area: header;
+}
+
+.nameslots-container{
+    background: lightgray;
+    grid-area: nameslots-container;
+    justify-content: left;
+}
+
+.nameslots{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nameslots li{
+    min-height: 60px;
+}
+
+.nameslots li::after{
+    content: "";
+    position: absolute;
+    left: 10px;
+    width: 100%;
+    height: 1px;
+    background: lightgray;
+    z-index: 1;
+}
+
+.event-container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    grid-area: main;
+    position: relative;
+}
+
+.slot{
+    position: absolute;
+    background: darkslategray;
+    border-radius: 5px;
+    z-index: 5;
+    color: white;
+    font-size: 12px;
+}
+
+.slot-1{
+    height: 45px;
+    width: auto;
+
+    /** calculate event time:
+    (event strating hour - 8) = ans * 60 =
+    ans/15 = ans + 1 = starting hour
+    **/
+
+    grid-row: 1;
+    grid-column: 2;
+}
+
