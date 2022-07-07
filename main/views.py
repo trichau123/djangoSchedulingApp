@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate,  login,logout
 #added jul6
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.contrib.auth.forms import UserCreationForm
 #create user
 #from django.contrib.auth import User
 # Create your views here.
@@ -17,6 +18,10 @@ def pSchedule(response):
 
 def lgin(request):
 	return render(request, 'index.html',{})
+#
+def register(request):
+	form = UserCreationForm()
+	return render(request, 'register.html', {'form': form})
 
 #connect with index html
 def signin(request):
