@@ -58,7 +58,9 @@ ROOT_URLCONF = 'scheduleApp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'reactd/build'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -130,4 +132,5 @@ LOGIN_REDIRECT_URL = 'home-page'
 #add code here jun 23
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'reactdj/build/static'),
 ]

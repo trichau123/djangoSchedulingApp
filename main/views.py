@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 #check user and pass
 from django.contrib.auth import authenticate,  login,logout
@@ -6,23 +6,37 @@ from django.contrib.auth import authenticate,  login,logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
 #create user
 #from django.contrib.auth import User
 # Create your views here.
 
-def index(response):
-	return HttpResponse("<h1> Welcome </h1>")
+#index is home page
+def index(request):
+	return render(request, 'calendar.html')
+	#return HttpResponse("<h1> calendar </h1>")
+
 
 def pSchedule(response):
 	return HttpResponse("<h1> schedule page </h1>")
 
-def lgin(request):
-	return render(request, 'index.html',{})
+#def lgin(request):
+#	return render(request, 'index.html',{})
 #
 def register(request):
-	form = UserCreationForm()
+	if request.method == 'POST':
+		form = UserCreationForm(request.POST)
+		if form.is_valid():
+			#create user in admin
+			form.save()
+			username = form.cleaned_data.get('username')
+			messages.success(request,f'Account created for {username}!')
+			return redirect('home-page')
+	else:
+		form =UserCreationForm()
 	return render(request, 'register.html', {'form': form})
-
+#message.debug, message.info, message.success, message.warning,
+#message.error
 #connect with index html
 def signin(request):
 
@@ -44,4 +58,4 @@ def signin(request):
 
 @login_required
 def home(request):
-	return render(request, 'home.html')
+	return render(request, 'calendar.html')

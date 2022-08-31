@@ -88,3 +88,61 @@ ul{
     grid-column: 2;
 }
 
+table{
+  table-layout: fixed;  width: 100%;
+}
+
+th{
+  background-color: lightblue;
+}
+
+tbody{
+  background-color: lightgrey;
+}
+
+tbody td{
+  text-align: center;
+}
+
+.edit, .done, .add-row, .add{
+  border-style: none;
+  background-color: lightgray;
+
+}
+
+.add:hover{
+  background-color: lightblue;
+  color: black;
+  border-radius: 15px;
+}
+
+.edit:hover{
+  background-color: lightblue;
+  color: black;
+  border-radius: 15px;
+}
+
+.done:hover{
+  background-color: lightblue;
+  color: black;
+  border-radius: 15px;
+}
+
+.add-row:hover{
+  background-color: lightblue;
+  color: black;
+  border-radius: 15px;
+}
+
+.delete-button{
+  background-color: lightsteelblue;
+  border-style: none;
+  border-radius: 15px;
+}
+
+.delete-button:hover{
+  background-color: lightcoral;
+  color: black;
+  border-style: none;
+  border-radius: 15px;
+}

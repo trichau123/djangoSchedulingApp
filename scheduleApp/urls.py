@@ -16,11 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from appointmentCalendar import views as calendar_views
+from main import views as user_views
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('calendar/' , calendar_views.appCalendar, name='appCalendar'),
     path('', include("main.urls")),  
+    path('',TemplateView.as_view(template_name='index.html')),
 ]
 
 #
